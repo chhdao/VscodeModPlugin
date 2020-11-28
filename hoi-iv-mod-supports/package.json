@@ -1,0 +1,44 @@
+{
+    "name": "hoi-iv-mod-supports",
+    "displayName": "hoi_iv_mod_supports",
+    "description": "Hoi4 Mod File Supports",
+    "publisher": "GOSCPS",
+    "version": "0.0.1",
+    "repository": "https://www.github.com/GOSCPS/VscodeModPlugin",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    
+    "contributes": {
+        "languages": [{
+            "id": "hoi4mod",
+            "aliases": ["hoi4mod","Hoi4 Mod"],
+            "extensions": [".mod"],
+            "configuration": "./language-configuration.json",
+            "firstLine": "#Okay-HOI4-MOD"
+        },
+    {
+        "id": "hoi4event",
+        "aliases": ["hoi4event","Hoi4 Event"],
+        "extensions":[".txt"],
+        "configuration": "./language-configuration.json",
+        "firstLine": "#Okay-HOI4-EVENT"
+    }],
+
+    "workspaceSymbolProvider" : "true",
+    
+        "grammars": [{
+            "language": "hoi4mod",
+            "scopeName": "text.hoi4.hoi4mod",
+            "path": "./syntaxes/mod.tmLanguage.json"
+        },{
+            "language": "hoi4event",
+            "scopeName": "text.hoi4.hoi4event",
+            "path": "./syntaxes/event.tmLanguage.json"
+        }]
+    },
+    "main": "./extension.ts"
+}

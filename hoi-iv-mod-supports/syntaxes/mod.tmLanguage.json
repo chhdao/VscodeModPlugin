@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Hoi4 Mod",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#ModRange"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.hoi4mod",
+				"match": "supported_version|version|tags|name|path|picture|dependencies|remote_file_id"
+			}]
+		},
+		
+		"strings": {
+			"name": "string.quoted.double.hoi4mod",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.hoi4mod",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+
+	"ModRange":{
+		"begin":"{",
+		"end": "}",
+
+		"beginCaptures": {
+			"0": { "name": "punctuation.paren.open" }
+		  },
+		  "endCaptures": {
+			"0": { "name": "punctuation.paren.close" }
+		  },
+
+		  "name": "expression.group"
+	},
+	"scopeName": "text.hoi4.hoi4mod"
+}
